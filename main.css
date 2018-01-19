@@ -1,26 +1,29 @@
 body{
     background-color: rgb(230,230,255);
-    min-width: 400px;
+    min-width:  550px;
+}
+
+p{
+    margin: 0;
 }
 
 .main_container{
-    padding-top: 40px;
+    padding-top: 30px;
+    margin-right: 20px;
+    margin-left: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
-    align-content: center;
-    margin-left: 30px;
-    margin-right: 30px;
 }
 
 .first_part{
+    margin-top: 30px;
+    margin-right: 15px;
     background-color: white;
-    margin: 30px;
-    padding: 10px;
     border-radius: 5px;
-    width: 500px;
-    min-width: 350px;
+    width: 55%;
+    min-width:420px;
     height: 200px;
     display: flex;
     flex-direction: column;
@@ -28,11 +31,13 @@ body{
     align-content: space-around;
 }
 .second_part{
+    margin-top: 30px;
+    margin-left: 15px;
     background-color: white;
-    margin: 30px;
     border-radius: 5px;
-    max-width: 300px;
-    min-width: 200px;
+    width: 35%;
+    min-width: 250px;
+    max-width: 400px;
     max-height: 200px;
     display: flex;
     flex-direction: column;
@@ -41,89 +46,182 @@ body{
 }
 
 .main_line{
-    width: 100%;
+    width: 96%;
+    height: 25%;
+    padding: 12px;
+    border-bottom: 1px rgb(230,230,255) solid;
+}
+
+.main_line_content{
+    height: 30px;
     display: flex;
     flex-direction: row;
-    border-bottom: 3px black ;
 }
+
 .text_input{
-    width: 80%;
-    border-bottom: 5px gray;
+    width: 85%;
+    padding: 5px;
+    border-radius: 2px;
+    border: 1px rgb(230,230,255) solid;
 }
 .Button_for_text{
     width: 20%;
     color: white;
+    font-size: 14px;
+    font-weight: bold;
     background-color: blue;
-
+    border-radius: 2px;
+    border: blue;
+    filter: opacity(75%);
 }
 
 .products_lines{
-    border: 3px silver;
-    margin: 5px;
-    padding: 5px;
+    border: 2px silver;
+    padding: 5px 12px 5px 12px;
+    height: 25%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border-bottom: 1px rgb(230,230,255) solid;
 }
 .left_name{
     font-size: 17px;
-    font-style: inherit;
-    width: 90%;
-    margin: 5px;
+    width: 96%;
+    height: 25%;
+    padding-top: 15px;
+    padding-left: 20px;
+    font-weight: bold;
+    border-bottom: 1px rgb(230,230,255) solid;
 }
 .left_info{
-    margin: 5px;
     font-size: 14px;
     display: flex;
+    height: 25%;
+    padding: 10px;
     flex-direction: row;
     justify-content: start;
+    border-bottom: 1px rgb(230,230,255) solid;
 }
 .bought_name{
     font-size: 17px;
-    font-style: inherit;
-    width: 90%;
-    margin: 5px;
+    font-weight: bold;
+    width: 96%;
+    height: 25%;
+    padding-top: 15px;
+    padding-left: 20px;
+    border-bottom: 1px rgb(230,230,255) solid;
 }
 .bought_info{
-    margin: 5px;
+    padding: 10px;
     font-size: 14px;
+    height: 25%;
     display: flex;
     flex-direction: row;
     justify-content: start;
+    flex-wrap: wrap;
+    border-bottom: 1px rgb(230,230,255) solid;
 }
 
 .prod{
-    margin: 5px;
+    background-color: silver;
+    border-radius: 2px;
+    font-size: 10px;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.left_number{
+    margin-top: 3px;
+    margin-right: 3px;
+    background-color: chocolate;
+    border-radius: 45px;
+    border-color: chocolate;
+    color: white;
+    font-weight: bold;
+    padding-top: 5px;
+    display: flex;
+    justify-content: center;
+    height: 17px;
+    width: 20px;
+    filter: opacity(75%);
+}
+
+.prod_text{
+    padding-top: 8px;
+    margin-right: 3px;
+    margin-left: 3px;
 }
 
 .more {
     border-radius: 45px;
     border-color: limegreen;
     color: white;
+    height: 26px;
+    width: 26px;
     background-color: limegreen;
+    filter: opacity(75%);
 }
 
 .less{
     border-radius: 45px;
     border-color: indianred;
     color: white;
+    height: 26px;
+    width: 26px;
     background-color: indianred;
+    filter: opacity(75%);
 }
 
 .product{
-    width: 40%;
+    width: 35%;
     display: flex;
+    padding-top: 7px;
     justify-content: flex-start;
 }
 
 .number_of{
-    width: 20%;
+    width: 30%;
+    padding: 5px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+}
+
+.number{
+    display: flex;
+    justify-content: center;
+    margin-left: 7px;
+    margin-right: 7px;
+    padding-top: 5px;
+    width: 25px;
+    border-color: silver;
+    background-color: silver;
+    border-radius: 3px;
+    font-size: 11px;
 }
 
 .bought{
-    width: 40%;
+    width: 35%;
     display: flex;
     justify-content: flex-end;
+}
+
+.buy{
+    width: 70px;
+    border-radius: 5px;
+    background-color: silver;
+    font-size: 11px;
+}
+
+.delete{
+    font-size: 14px;
+    font-weight: bold;
+    width: 30px;
+    background-color: red;
+    border-color: red;
+    color: white;
+    border-radius: 5px;
+    margin-left: 5px;
+    filter: opacity(75%);
 }

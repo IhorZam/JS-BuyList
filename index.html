@@ -10,20 +10,24 @@
     <div class="main_container">
         <div class="first_part">
             <div class="main_line">
-                <input class="text_input" type="text" placeholder="Назва Товару">
-                <button class="Button_for_text">Додати</button>
+                <div class="main_line_content">
+                    <input class="text_input" type="text" placeholder="Назва Товару">
+                    <button class="Button_for_text">Додати</button>
+                </div>
             </div>
                 <div class="products_lines">
                     <div class="product">
                         <span>Печиво</span>
                     </div>
                     <div class="number_of">
-                        <button class="more">-</button>
-                        <span>2</span>
-                        <button class="less">+</button>
+                        <button class="less">-</button>
+                        <div class="number">
+                            <span>2</span>
+                        </div>
+                        <button class="more">+</button>
                     </div>
                     <div class="bought">
-                        <button>Куплено</button>
+                        <button class="buy">Куплено</button>
                         <button class="delete">x</button>
                     </div>
                 </div>
@@ -32,12 +36,14 @@
                         <span>Сир</span>
                     </div>
                     <div class="number_of">
-                        <button class="more">-</button>
-                        <span>1</span>
-                        <button class="less">+</button>
+                        <button class="less">-</button>
+                        <div class="number">
+                            <span>1</span>
+                        </div>
+                        <button class="more">+</button>
                     </div>
                     <div class="bought">
-                        <button>Куплено</button>
+                        <button class="buy">Куплено</button>
                         <button class="delete">x</button>
                     </div>
                 </div>
@@ -46,12 +52,14 @@
                         <span>Молоко</span>
                     </div>
                     <div class="number_of">
-                        <button class="more">-</button>
-                        <span>4</span>
-                        <button class="less">+</button>
+                        <button class="less">-</button>
+                        <div class="number">
+                            <span>4</span>
+                        </div>
+                        <button class="more">+</button>
                     </div>
                     <div class="bought">
-                        <button>Куплено</button>
+                        <button class="buy">Куплено</button>
                         <button class="delete">x</button>
                     </div>
                 </div>
@@ -62,21 +70,27 @@
             </div>
             <div class="left_info">
                 <div class="prod">
-                    <span>Сир</span>
-                    <span>1</span>
+                    <div class="prod_text">
+                        <span>Сир</span>
+                    </div>
+                    <div class="left_number">
+                        <span>1</span>
+                    </div>
                 </div>
                 <div class="prod">
-                    <span>Печиво</span>
-                    <span>2</span>
+                    <div class="prod_text">
+                        <span>Печиво</span>
+                    </div>
+                    <div class="left_number">
+                        <span>2</span>
+                    </div>
                 </div>
             </div>
             <div class="bought_name">
                 <p>Куплено</p>
             </div>
             <div class="bought_info">
-                <span>
-                    Ковбаса
-                </span>
+
             </div>
         </div>
     </div>
