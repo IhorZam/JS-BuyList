@@ -41,19 +41,20 @@ body{
 }
 
 .main_line{
-    margin: 5px;
-    padding: 5px;
     width: 100%;
     display: flex;
     flex-direction: row;
     border-bottom: 3px black ;
 }
 .text_input{
-    width: 70%;
+    width: 80%;
     border-bottom: 5px gray;
 }
 .Button_for_text{
-    width: 25%;
+    width: 20%;
+    color: white;
+    background-color: blue;
+
 }
 
 .products_lines{
@@ -93,4 +94,36 @@ body{
 
 .prod{
     margin: 5px;
+}
+
+.more {
+    border-radius: 45px;
+    border-color: limegreen;
+    color: white;
+    background-color: limegreen;
+}
+
+.less{
+    border-radius: 45px;
+    border-color: indianred;
+    color: white;
+    background-color: indianred;
+}
+
+.product{
+    width: 40%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.number_of{
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.bought{
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
 }
