@@ -37,8 +37,8 @@ p{
     border-radius: 5px;
     width: 35%;
     min-width: 250px;
+    min-height: 200px;
     max-width: 400px;
-    max-height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -135,9 +135,9 @@ p{
 .left_number{
     margin-top: 3px;
     margin-right: 3px;
-    background-color: chocolate;
+    background-color: orangered;
     border-radius: 45px;
-    border-color: chocolate;
+    border-color: orangered;
     color: white;
     font-weight: bold;
     padding-top: 5px;
