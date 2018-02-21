@@ -10,7 +10,8 @@ $(function(){
      function add_item(title){
              var $aux_node = $($listItemTemplate);
 
-             $aux_node.find(".product").text(title);
+             var $title = $aux_node.find(".title-prod");
+             $title.text(title);
              $aux_node.css("display", "flex");
 
              $aux_node.fadeOut(250, function () {
@@ -23,8 +24,13 @@ $(function(){
                      opacity: 0
                  }, 500, function() {
                      $aux_node.remove();
+                     refreshList();
                  });
-                 refreshList();
+
+             });
+
+             $title.click(function () {
+                 doMagic($aux_node);
              });
 
 
@@ -33,6 +39,23 @@ $(function(){
             refreshList();
             buy($aux_node);
 
+
+     }
+
+     function doMagic(node) {
+         var value_is = node.find(".title-prod").text();
+         node.find(".title-prod").remove();
+         node.find(".product").append("<input type=\"text\" class=\"edit\">")
+         node.find(".edit").val(value_is);
+         node.find(".edit").focusout(function () {
+             var cur_val = $(this).val();
+             node.find(".edit").remove();
+             node.find(".product").append("<span class=\"title-prod\"></span>");
+             node.find(".title-prod").text(cur_val);
+             node.find(".title-prod").click(function () {
+                 doMagic(node);
+             });
+         });
 
      }
 
@@ -68,6 +91,7 @@ $(function(){
 
      function refreshList(){
          var all_prods = pageList.children(".unbought");
+         console.log(all_prods);
          pageRes.find(".left_info").children().each(function(){
              $(this).remove();
          });
@@ -79,6 +103,7 @@ $(function(){
          });
 
          var bought_prod = pageList.children(".bought");
+         console.log(bought_prod);
          pageRes.find(".bought_info").children().each(function(){
              $(this).remove();
          });
@@ -95,8 +120,8 @@ $(function(){
              var number_of_now = parseInt(node.find(".number").text());
              node.find(".number").text(number_of_now + 1);
              if (number_of_now === 1){
-                 node.find(".noMore").addClass("less");
-                 node.find(".less").removeClass("noMore");
+                 node.find(".noMore").remove();
+                 node.find(".number_of").prepend("<button class=\"less\" data-tooltip='Tooltip'>-</button>")
                  changeNumMinus(node);
              }
              refreshList();
@@ -108,19 +133,14 @@ $(function(){
              var num_of_now = parseInt(node.find(".number").text());
              node.find(".number").text(num_of_now - 1);
              if (num_of_now - 1 === 1){
-                 node.find(".less").addClass("noMore");
-                 node.find(".noMore").removeClass("less");
-                 node.find(".noMore").click(function(){
-                     var num_of_now = parseInt(node.find(".number").text());
-                     node.find(".number").text(num_of_now);
-                 });
+                 node.find(".less").remove();
+                 node.find(".number_of").prepend("<button class=\"noMore\" data-tooltip='Tooltip'>-</button>");
              }
              refreshList();
          });
      }
 
      buttonForAdd.click(function () {
-
          var title = $(".text_input");
          if (title.val() === ""){
              alert("No name entered");
@@ -129,6 +149,18 @@ $(function(){
         add_item(title.val());
         title.val("");
      });
+
+    $(".text_input").keypress(function(e) {
+        if(e.which == 13) {
+            var title = $(".text_input");
+            if (title.val() === ""){
+                alert("No name entered");
+                return;
+            }
+            add_item(title.val());
+            title.val("");
+        }
+    });
 
 
      add_item("Печиво");
