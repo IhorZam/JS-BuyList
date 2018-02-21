@@ -16,16 +16,20 @@ p{
 
 .first_part{
     margin: 15px;
-    background-color: white;
     border-radius: 5px;
     border: 2px rgb(230,230,255) solid;
     width: 55%;
-    height: auto;
     display: flex;
     min-width: 310px;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-content: space-around;
+}
+
+.first_part > :last-child{
+    border-bottom: 0px solid;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .second_part{
@@ -34,6 +38,7 @@ p{
     border-radius: 5px;
     border: 2px rgb(230,230,255) solid;
     width: 35%;
+    height: auto;
     min-height: 200px;
     max-width: 400px;
     display: flex;
@@ -42,7 +47,8 @@ p{
     align-content: space-around;
 }
 
-@media (max-width: 670px){
+
+@media (max-width: 750px){
     .main_container{
         justify-content: space-around;
     }
@@ -60,8 +66,13 @@ p{
     width: 100%;
     height: 50px;
     box-sizing: border-box;
+    position: relative;
+    top: 0;
+    background-color: white;
     padding: 12px;
     border-bottom: 1px rgb(230,230,255) solid;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .main_line_content{
@@ -87,10 +98,25 @@ p{
     min-width: 65px;
 }
 
-.products_lines{
-    border: 2px silver;
+.list_item.unbought{
     padding: 5px 12px 5px 12px;
-    height: 35px;
+    height: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px rgb(230,230,255) solid;
+}
+
+
+.list_item.bought{
+    padding: 5px 12px 5px 12px;
+    height: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -139,6 +165,7 @@ p{
     background-color: silver;
     border-radius: 2px;
     font-size: 10px;
+    height:40px;
     margin-right: 5px;
     margin-bottom: 5px;
     display: flex;
@@ -147,7 +174,7 @@ p{
 }
 
 .left_number{
-    margin-top: 3px;
+    margin-top: 10px;
     margin-right: 3px;
     background-color: orangered;
     border-radius: 45px;
@@ -155,6 +182,9 @@ p{
     color: white;
     font-weight: bold;
     padding-top: 5px;
+    position: relative;
+    top: 0;
+    bottom: 0;
     display: flex;
     justify-content: center;
     height: 17px;
@@ -163,7 +193,10 @@ p{
 }
 
 .prod_text{
-    padding-top: 8px;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    padding-top: 15px;
     margin-right: 3px;
     margin-left: 3px;
 }
@@ -190,6 +223,16 @@ p{
     background-color: #cd5c5c;
 }
 
+.noMore{
+    border-radius: 45px;
+    border: 0.5px #cd5c5c;
+    color: white;
+    min-height: 26px;
+    height: 26px;
+    min-width: 26px;
+    width: 26px;
+    background-color: #cda5a7;
+}
 .product{
     width: 35%;
     display: flex;
@@ -229,6 +272,12 @@ p{
     background-color: silver;
     font-size: 11px;
 }
+.dontBuy{
+    width: 70px;
+    border-radius: 5px;
+    background-color: silver;
+    font-size: 11px;
+}
 
 .delete{
     font-size: 14px;
@@ -259,7 +308,7 @@ p{
 }
 
 .beidzh:hover{
-    transform: translateY(-40px);
+    transform: translateY(-50px);
     background-color: blue;
     border-color: blue;
 }
@@ -290,6 +339,9 @@ p{
     }
 }
 
+button{
+    position: relative;
+}
 
 button::after{
     display: flex;
@@ -301,8 +353,10 @@ button::after{
     color: white;
     content: attr(data-tooltip);
     position: absolute;
-    margin-top: -30px;
-    margin-left: -5px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: auto;
     transition: all 700ms ease-in;
     z-index: 5;
     border-color: #66218a;
@@ -316,6 +370,6 @@ button::after{
 
 button:hover::after {
     opacity: 1;
-    transform: translateY(-30px);
+    transform: translateY(-40px);
     visibility: visible;
 }
